@@ -1,0 +1,26 @@
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\Sticky Notes.exe.config
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\Sticky Notes.exe
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\Sticky Notes.pdb
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\ComponentFactory.Krypton.Docking.dll
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\ComponentFactory.Krypton.Docking.pdb
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\ComponentFactory.Krypton.Navigator.pdb
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\ComponentFactory.Krypton.Workspace.pdb
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky_Notes.Properties.Resources.resources
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky Notes.csproj.GenerateResource.cache
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky Notes.csproj.CoreCompileInputs.cache
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky Notes.csproj.CopyComplete
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky Notes.exe
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky Notes.pdb
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky_Notes.frmMain.resources
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky_Notes.frmNote.resources
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\MarkdownSharp.dll
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\MarkdownSharp.xml
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky_Notes.frmWarning.resources
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky_Notes.frmControls.resources
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\Newtonsoft.Json.dll
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\bin\Debug\Newtonsoft.Json.xml
+C:\Users\akash\Documents\Visual Studio 2019\Projects\Sticky Notes\Sticky Notes\obj\Debug\Sticky Notes.csproj.AssemblyReference.cache
