@@ -5,8 +5,8 @@ Stick-It is built with Microsoft Visual Studio 2019 using Visual C#. It uses the
 
 Stick-It is still in the alpha phase. This application is not ready as a daily driver for note taking. **It may have severe bugs and issues that may affect your work.** I'm still in the process of improving it and making it ready for general use.
 
+`v0.1.1 Screenshots`
 ![image](https://user-images.githubusercontent.com/46389631/165118730-90b373c5-8ef3-4744-880e-3cd90beb0d6b.png)
-> v0.1.1 Screenshots
 
 ## 1. Features ✏️
 1. Supports adding, editing and deleting notes
