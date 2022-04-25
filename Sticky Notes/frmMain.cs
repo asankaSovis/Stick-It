@@ -132,7 +132,7 @@ namespace Sticky_Notes
             // If delete button is clicked, we first show a warning.
             // If the user select yes, we delete the note. Otherwise
             // we do nothing
-            frmWarning warning = new frmWarning(this, "Are you sure you want to delete this note?");
+            frmWarning warning = new frmWarning(this, "Are you sure you want to delete this note?", frmWarning.MessageTypes.WarningSelection);
             warning.ShowDialog();
 
             if (warning.selection == 1)
@@ -365,6 +365,7 @@ namespace Sticky_Notes
         {
             spcNote.Panel2Collapsed = false;
             spcNote.Panel1Collapsed = true;
+            btnStick.Enabled = btnEdit.Enabled = btnDelete.Enabled = true;
             btnEdit.Text = "E";
         }
 
