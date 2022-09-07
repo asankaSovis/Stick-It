@@ -1,0 +1,5 @@
+["255","255","235","165"]
+1. What is defined by Artificial Neural Network (ANN)? Describe the different applications of AI in modern world.
+2. Describe the basic components of ANNs?
+3. A 4-input neuron has weights 1, 2, 3 and 4. The transfer function is linear with the constant of proportionality being equal to 2. The inputs are 4, 10, 5 and 20 respectively. What is the Output Value?
+4. Consider a single perception with weights as given in the Figure 1. Which Operator (AND, OR, NOT) can solve the perception? Elaborate your answer.

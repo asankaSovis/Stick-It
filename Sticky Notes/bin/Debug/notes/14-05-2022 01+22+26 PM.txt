@@ -1,0 +1,8 @@
+["255","255","235","165"]
+1. Briefly discuss what is Artificial Intelligence (AI)?
+2. What is intelligent system?
+3. What are the components of intelligent systems?
+4. Briefly discuss the perception component of the intelligent systems.
+5. What are the different perception sensors used in autonomous systems?
+6. Briefly discuss what are the autonomous agents?
+7. List down the learning algorithms used in autonomous systems and briefly discuss why learning algorithms used?
