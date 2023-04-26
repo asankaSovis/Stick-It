@@ -1,9 +1,9 @@
-# 📒 Stick-It
-Stick It is a basic note organizing app that can be used to store and pin notes to the screen. Simillar to the Microsoft Sticky notes, this can be used to write simple notes quickly and easily. Unlike Sticky Notes, this supports markdown and also has the functionality to pin the notes on top of other windows.
+# 📒 Stick It!
+Stick It! is a basic note organizing app that can be used to store and pin notes to the screen. Simillar to the Microsoft Sticky notes, this can be used to write simple notes quickly and easily. Unlike Sticky Notes, this supports markdown and also has the functionality to pin the notes on top of other windows.
 
-Stick-It is built with Microsoft Visual Studio 2019 using Visual C#. It uses the [Krypton Graphic elements](https://github.com/ComponentFactory/Krypton) for the interface. It uses the [MarkdownSharp](https://github.com/StackExchange/MarkdownSharp) library for parsing markdown data.
+Stick It! is built with Microsoft Visual Studio 2019 using Visual C#. It uses the [Krypton Graphic elements](https://github.com/ComponentFactory/Krypton) for the interface. It uses the [MarkdownSharp](https://github.com/StackExchange/MarkdownSharp) library for parsing markdown data.
 
-Stick-It is still in the alpha phase. This application is not ready as a daily driver for note taking. **It may have severe bugs and issues that may affect your work.** I'm still in the process of improving it and making it ready for general use.
+Stick It! is still in the alpha phase. This application is not ready as a daily driver for note taking. **It may have severe bugs and issues that may affect your work.** I'm still in the process of improving it and making it ready for general use.
 
 > ![User Interface](https://user-images.githubusercontent.com/46389631/234654578-41de49df-2d75-4e4b-90f8-62b0be34b46d.png)
 > User Interface
