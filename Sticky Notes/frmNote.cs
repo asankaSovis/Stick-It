@@ -1,6 +1,6 @@
 ﻿/*---------------------------------------------------------
 
-                Stick It - Basic Note Taking App
+                Stick It! - Basic Note Taking App
                         v1.0.0 Alpha
     Stick it is a basic note taking app that is fully opensource.
     Written in Visual C#, this application is intended to be used
@@ -37,10 +37,13 @@ namespace Sticky_Notes
 
         frmMain parent = null; // Parent of the form
 
-        public frmNote(frmMain _parent, string _myNote, Color _myColour)
+        Image[] assets = new Image[2];
+
+        public frmNote(frmMain _parent, string _title, string _myNote, Color _myColour)
         {
             InitializeComponent();
 
+            lblMove.Text = _title;
             webMain.DocumentText = _myNote;
             this.BackColor = _myColour;
             parent = _parent;
@@ -50,10 +53,16 @@ namespace Sticky_Notes
             lastPosition = Cursor.Position;
 
             loadColours(); // Load colour palette
+            loadAssets();
         }
 
         // /////////////////////////////////////////////////////////////
         // Event handlers
+
+        private void frmNote_Resize(object sender, EventArgs e)
+        {
+            spcMain.SplitterDistance = 30;
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -64,6 +73,11 @@ namespace Sticky_Notes
         {
             // Pin this form to the top
             this.TopMost = !this.TopMost;
+
+            if (this.TopMost)
+                btnPin.StateCommon.Back.Image = assets[0];
+            else
+                btnPin.StateCommon.Back.Image = assets[1];
         }
 
         private void lblMove_MouseMove(object sender, MouseEventArgs e)
@@ -143,6 +157,18 @@ namespace Sticky_Notes
             kplButton.ButtonStyles.ButtonCommon.StateCommon.Content.ShortText.Color1 = parent.palette[4];
 
             return 0;
+        }
+
+        /// <summary>
+        /// Loads the image assets
+        /// </summary>
+
+        private void loadAssets()
+        {
+            btnClose.StateCommon.Back.Image = Image.FromFile("assets/cross.png");
+            assets[0] = Image.FromFile("assets/pin.png");
+            assets[1] = Image.FromFile("assets/unpin.png");
+            btnPin.StateCommon.Back.Image = assets[1];
         }
     }
 }

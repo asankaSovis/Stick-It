@@ -1,15 +1,15 @@
 ﻿/*---------------------------------------------------------
 
-                Stick It - Basic Note Taking App
-                        v0.1.1 Alpha
+                Stick It! - Basic Note Taking App
+                        v1.0.0 Alpha
     Stick it is a basic note taking app that is fully opensource.
     Written in Visual C#, this application is intended to be used
             for day today, small note-taking purposes.
     
     Author: Asanka Sovis
     Start Date: 20/04/2022
-    Public Release: 22/04/2022
-    Last Edit: 22/04/2022
+    Public Release: 26/04/2023
+    Last Edit: 26/04/2023
 
     This form displays a message to the user with Yes
     or No options
@@ -80,7 +80,8 @@ namespace Sticky_Notes
             pcbIcon.Image = icons[_messageType % 4];
             loadButtons(_messageType);
             parent = _parent;
-            this.Text = parent.Text;
+
+            this.Text = parent.about["title"];
             this.Icon = parent.Icon;
 
             loadColours(); // Loads the palette
@@ -124,12 +125,13 @@ namespace Sticky_Notes
             kplButton.ButtonStyles.ButtonCommon.StateTracking.Back.Color1 = parent.palette[5];
             kplButton.ButtonStyles.ButtonCommon.StatePressed.Back.Color1 = parent.palette[2];
 
-            // Special close button
-            kplButton.ButtonStyles.ButtonCommon.StateCommon.Content.ShortText.Color1 = parent.palette[4];
-
             // Form palette
             kplForm.FormStyles.FormCommon.StateCommon.Back.Color1 = kplForm.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = parent.palette[6];
             kplForm.ButtonStyles.ButtonForm.StateCommon.Back.Color1 = parent.palette[7];
+
+            // Panel
+            kplPanel.Common.StateCommon.Back.Color1 = parent.palette[6];
+            spl1.BackColor = spl2.BackColor = parent.palette[6];
         }
 
         /// <summary>

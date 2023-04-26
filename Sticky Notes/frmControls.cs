@@ -1,6 +1,6 @@
 ﻿/*---------------------------------------------------------
 
-                Stick It - Basic Note Taking App
+                Stick It! - Basic Note Taking App
                         v1.0.0 Alpha
     Stick it is a basic note taking app that is fully opensource.
     Written in Visual C#, this application is intended to be used
@@ -8,8 +8,8 @@
     
     Author: Asanka Sovis
     Start Date: 20/04/2022
-    Public Release: 22/04/2022
-    Last Edit: 22/04/2022
+    Public Release: 26/04/2023
+    Last Edit: 26/04/2023
 
     This form is use to stylize the selected text of the RTB
     in the main form

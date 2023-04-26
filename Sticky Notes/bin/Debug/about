@@ -1,0 +1,13 @@
+{
+	"title": "Stick It!",
+	"author": "Asanka Sovis",
+	"description": "Stick It! is a basic note organizing app that can be used to store and pin notes to the screen. Simillar to the Microsoft Sticky notes, this can be used to write simple notes quickly and easily. Unlike Sticky Notes, this supports markdown and also has the functionality to pin the notes on top of other windows.",
+	"version-short": "v1.0.0",
+	"version-long": "Version 1.0.0 Alpha",
+	"license": "MIT License",
+	"copyright": "(C) Asanka Sovis",
+	"link": "https://github.com/asankaSovis/Stick-It",
+	"start": "20/04/2022",
+	"public": "26/04/2023",
+	"release": "26/04/2023"
+}
