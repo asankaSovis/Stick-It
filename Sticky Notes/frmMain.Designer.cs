@@ -30,6 +30,7 @@ namespace Sticky_Notes
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.grpMain = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.kplGroup = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
@@ -44,6 +45,7 @@ namespace Sticky_Notes
             this.lblPreviewMessage = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.webNote = new System.Windows.Forms.WebBrowser();
             this.grpList = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.btnInfo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNew = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lsbMain = new ComponentFactory.Krypton.Toolkit.KryptonListBox();
             this.kplList = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
@@ -70,23 +72,25 @@ namespace Sticky_Notes
             // tlpMain
             // 
             this.tlpMain.ColumnCount = 2;
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 306F));
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tlpMain.Controls.Add(this.grpMain, 1, 0);
             this.tlpMain.Controls.Add(this.grpList, 0, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(800, 450);
+            this.tlpMain.Size = new System.Drawing.Size(766, 481);
             this.tlpMain.TabIndex = 0;
             // 
             // grpMain
             // 
+            this.grpMain.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalControl;
             this.grpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpMain.Location = new System.Drawing.Point(309, 3);
+            this.grpMain.Location = new System.Drawing.Point(308, 2);
+            this.grpMain.Margin = new System.Windows.Forms.Padding(2);
             this.grpMain.Name = "grpMain";
             this.grpMain.Palette = this.kplGroup;
             this.grpMain.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
@@ -94,16 +98,17 @@ namespace Sticky_Notes
             // grpMain.Panel
             // 
             this.grpMain.Panel.Controls.Add(this.tlpNote);
-            this.grpMain.Size = new System.Drawing.Size(488, 444);
+            this.grpMain.Size = new System.Drawing.Size(456, 477);
             this.grpMain.TabIndex = 1;
             // 
             // kplGroup
             // 
+            this.kplGroup.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.kplGroup.ControlStyles.ControlGroupBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kplGroup.ControlStyles.ControlGroupBox.StateCommon.Border.Width = 2;
-            this.kplGroup.LabelStyles.LabelCommon.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.01739F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kplGroup.ControlStyles.ControlGroupBox.StateCommon.Border.Width = 1;
+            this.kplGroup.LabelStyles.LabelCommon.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // tlpNote
             // 
@@ -113,82 +118,92 @@ namespace Sticky_Notes
             this.tlpNote.Controls.Add(this.spcNote, 0, 0);
             this.tlpNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpNote.Location = new System.Drawing.Point(0, 0);
+            this.tlpNote.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNote.Name = "tlpNote";
             this.tlpNote.RowCount = 2;
             this.tlpNote.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNote.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tlpNote.Size = new System.Drawing.Size(482, 416);
+            this.tlpNote.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpNote.Size = new System.Drawing.Size(452, 457);
             this.tlpNote.TabIndex = 0;
             // 
             // tlpControls
             // 
             this.tlpControls.ColumnCount = 4;
-            this.tlpControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tlpControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tlpControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tlpControls.Controls.Add(this.btnStick, 0, 0);
             this.tlpControls.Controls.Add(this.btnEdit, 0, 0);
             this.tlpControls.Controls.Add(this.btnDelete, 3, 0);
             this.tlpControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpControls.Location = new System.Drawing.Point(3, 373);
+            this.tlpControls.Location = new System.Drawing.Point(2, 422);
+            this.tlpControls.Margin = new System.Windows.Forms.Padding(2);
             this.tlpControls.Name = "tlpControls";
             this.tlpControls.RowCount = 1;
             this.tlpControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpControls.Size = new System.Drawing.Size(476, 40);
+            this.tlpControls.Size = new System.Drawing.Size(448, 33);
             this.tlpControls.TabIndex = 1;
             // 
             // btnStick
             // 
             this.btnStick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStick.Location = new System.Drawing.Point(47, 3);
+            this.btnStick.Location = new System.Drawing.Point(35, 2);
+            this.btnStick.Margin = new System.Windows.Forms.Padding(2);
             this.btnStick.Name = "btnStick";
             this.btnStick.Palette = this.kplButton;
             this.btnStick.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.btnStick.Size = new System.Drawing.Size(38, 34);
-            this.btnStick.TabIndex = 3;
-            this.btnStick.Values.Text = "P";
+            this.btnStick.Size = new System.Drawing.Size(29, 29);
+            this.btnStick.TabIndex = 0;
+            this.btnStick.TabStop = false;
+            this.btnStick.Values.Text = "";
             this.btnStick.Click += new System.EventHandler(this.btnStick_Click);
             // 
             // kplButton
             // 
             this.kplButton.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Silver;
             this.kplButton.ButtonStyles.ButtonCommon.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.kplButton.ButtonStyles.ButtonCommon.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.kplButton.ButtonStyles.ButtonCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kplButton.ButtonStyles.ButtonCommon.StateCommon.Border.Width = 3;
+            this.kplButton.ButtonStyles.ButtonCommon.StateCommon.Border.Width = 1;
             this.kplButton.ButtonStyles.ButtonCommon.StateDisabled.Back.Color1 = System.Drawing.Color.Silver;
             this.kplButton.ButtonStyles.ButtonCommon.StateDisabled.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             // 
             // btnEdit
             // 
             this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdit.Location = new System.Drawing.Point(3, 3);
+            this.btnEdit.Location = new System.Drawing.Point(2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Palette = this.kplButton;
             this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.btnEdit.Size = new System.Drawing.Size(38, 34);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Values.Text = "E";
+            this.btnEdit.Size = new System.Drawing.Size(29, 29);
+            this.btnEdit.TabIndex = 0;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Values.Text = "";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.Location = new System.Drawing.Point(435, 3);
+            this.btnDelete.Location = new System.Drawing.Point(417, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Palette = this.kplButton;
             this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.btnDelete.Size = new System.Drawing.Size(38, 34);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Values.Text = "D";
+            this.btnDelete.Size = new System.Drawing.Size(29, 29);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Values.Text = "";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // spcNote
             // 
             this.spcNote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcNote.Location = new System.Drawing.Point(3, 3);
+            this.spcNote.Location = new System.Drawing.Point(2, 2);
+            this.spcNote.Margin = new System.Windows.Forms.Padding(2);
             this.spcNote.Name = "spcNote";
             // 
             // spcNote.Panel1
@@ -199,18 +214,20 @@ namespace Sticky_Notes
             // 
             this.spcNote.Panel2.Controls.Add(this.lblPreviewMessage);
             this.spcNote.Panel2.Controls.Add(this.webNote);
-            this.spcNote.Size = new System.Drawing.Size(476, 364);
-            this.spcNote.SplitterDistance = 158;
+            this.spcNote.Size = new System.Drawing.Size(448, 416);
+            this.spcNote.SplitterDistance = 148;
+            this.spcNote.SplitterWidth = 3;
             this.spcNote.TabIndex = 2;
             // 
             // rtbMain
             // 
             this.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbMain.Location = new System.Drawing.Point(0, 0);
+            this.rtbMain.Margin = new System.Windows.Forms.Padding(2);
             this.rtbMain.Name = "rtbMain";
             this.rtbMain.Palette = this.kplButton;
             this.rtbMain.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.rtbMain.Size = new System.Drawing.Size(158, 364);
+            this.rtbMain.Size = new System.Drawing.Size(148, 416);
             this.rtbMain.TabIndex = 1;
             this.rtbMain.Text = "";
             this.rtbMain.SelectionChanged += new System.EventHandler(this.rtbMain_SelectionChanged);
@@ -223,9 +240,10 @@ namespace Sticky_Notes
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPreviewMessage.AutoSize = false;
-            this.lblPreviewMessage.Location = new System.Drawing.Point(71, 142);
+            this.lblPreviewMessage.Location = new System.Drawing.Point(53, 115);
+            this.lblPreviewMessage.Margin = new System.Windows.Forms.Padding(2);
             this.lblPreviewMessage.Name = "lblPreviewMessage";
-            this.lblPreviewMessage.Size = new System.Drawing.Size(163, 100);
+            this.lblPreviewMessage.Size = new System.Drawing.Size(186, 201);
             this.lblPreviewMessage.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.lblPreviewMessage.StateCommon.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.lblPreviewMessage.TabIndex = 1;
@@ -235,77 +253,89 @@ namespace Sticky_Notes
             // 
             this.webNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webNote.Location = new System.Drawing.Point(0, 0);
-            this.webNote.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webNote.Margin = new System.Windows.Forms.Padding(2);
+            this.webNote.MinimumSize = new System.Drawing.Size(15, 16);
             this.webNote.Name = "webNote";
-            this.webNote.Size = new System.Drawing.Size(314, 364);
+            this.webNote.Size = new System.Drawing.Size(297, 416);
             this.webNote.TabIndex = 0;
             // 
             // grpList
             // 
+            this.grpList.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalControl;
             this.grpList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpList.Location = new System.Drawing.Point(3, 3);
+            this.grpList.Location = new System.Drawing.Point(2, 2);
+            this.grpList.Margin = new System.Windows.Forms.Padding(2);
             this.grpList.Name = "grpList";
             this.grpList.Palette = this.kplGroup;
             this.grpList.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             // 
             // grpList.Panel
             // 
+            this.grpList.Panel.Controls.Add(this.btnInfo);
             this.grpList.Panel.Controls.Add(this.btnNew);
             this.grpList.Panel.Controls.Add(this.lsbMain);
-            this.grpList.Size = new System.Drawing.Size(300, 444);
+            this.grpList.Size = new System.Drawing.Size(302, 477);
             this.grpList.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.grpList.TabIndex = 2;
             this.grpList.Values.Heading = "My Notes";
             // 
+            // btnInfo
+            // 
+            this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnInfo.Location = new System.Drawing.Point(7, 420);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Palette = this.kplButton;
+            this.btnInfo.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.btnInfo.Size = new System.Drawing.Size(29, 29);
+            this.btnInfo.TabIndex = 0;
+            this.btnInfo.TabStop = false;
+            this.btnInfo.Values.Text = "";
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
             // btnNew
             // 
             this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNew.Location = new System.Drawing.Point(231, 353);
+            this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNew.Location = new System.Drawing.Point(246, 404);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Palette = this.kplButton;
             this.btnNew.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.btnNew.Size = new System.Drawing.Size(60, 60);
+            this.btnNew.Size = new System.Drawing.Size(45, 45);
             this.btnNew.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnNew.StateCommon.Border.Rounding = 30;
-            this.btnNew.TabIndex = 2;
-            this.btnNew.Values.Text = "+";
+            this.btnNew.TabIndex = 0;
+            this.btnNew.TabStop = false;
+            this.btnNew.Values.Text = "";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // lsbMain
             // 
             this.lsbMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsbMain.Location = new System.Drawing.Point(0, 0);
+            this.lsbMain.Margin = new System.Windows.Forms.Padding(2);
             this.lsbMain.Name = "lsbMain";
             this.lsbMain.Palette = this.kplList;
             this.lsbMain.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.lsbMain.Size = new System.Drawing.Size(294, 416);
+            this.lsbMain.Size = new System.Drawing.Size(298, 457);
             this.lsbMain.StateCheckedNormal.Item.Border.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.False;
-            this.lsbMain.StateCheckedNormal.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.lsbMain.StateCheckedNormal.Item.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
             this.lsbMain.StateCheckedNormal.Item.Border.Rounding = 2;
-            this.lsbMain.StateCheckedNormal.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.lsbMain.StateCheckedNormal.Item.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.lsbMain.StateCheckedPressed.Item.Border.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.False;
-            this.lsbMain.StateCheckedPressed.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.lsbMain.StateCheckedPressed.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.lsbMain.StateCheckedPressed.Item.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.lsbMain.StateCheckedPressed.Item.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.lsbMain.StateCheckedTracking.Item.Border.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.False;
-            this.lsbMain.StateCheckedTracking.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.lsbMain.StateCheckedTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.lsbMain.StateCheckedTracking.Item.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.lsbMain.StateCheckedTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.lsbMain.StateCommon.Border.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.False;
-            this.lsbMain.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.lsbMain.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
             this.lsbMain.StateTracking.Item.Border.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.False;
-            this.lsbMain.StateTracking.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.lsbMain.StateTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.lsbMain.StateTracking.Item.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.lsbMain.StateTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.lsbMain.TabIndex = 3;
             this.lsbMain.SelectedIndexChanged += new System.EventHandler(this.lsbMain_SelectedIndexChanged);
             // 
@@ -329,14 +359,17 @@ namespace Sticky_Notes
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(766, 481);
             this.Controls.Add(this.tlpMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(616, 405);
             this.Name = "frmMain";
             this.Palette = this.kplForm;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.Text = "Form1";
+            this.Text = "Stick It";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.tlpMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpMain.Panel)).EndInit();
@@ -363,11 +396,8 @@ namespace Sticky_Notes
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kplButton;
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox grpMain;
         private System.Windows.Forms.TableLayoutPanel tlpNote;
-        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox grpList;
         private System.Windows.Forms.TableLayoutPanel tlpControls;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnNew;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kplGroup;
-        private ComponentFactory.Krypton.Toolkit.KryptonListBox lsbMain;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kplList;
         private System.Windows.Forms.SplitContainer spcNote;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox rtbMain;
@@ -379,6 +409,10 @@ namespace Sticky_Notes
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kplEditedItem;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kplForm;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnStick;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox grpList;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnNew;
+        private ComponentFactory.Krypton.Toolkit.KryptonListBox lsbMain;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnInfo;
     }
 }
 

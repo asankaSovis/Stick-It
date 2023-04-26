@@ -1,6 +1,6 @@
 ﻿/*---------------------------------------------------------
 
-                Stick It - Basic Note Taking App
+                Stick It! - Basic Note Taking App
                         v1.0.0 Alpha
     Stick it is a basic note taking app that is fully opensource.
     Written in Visual C#, this application is intended to be used
@@ -8,8 +8,8 @@
     
     Author: Asanka Sovis
     Start Date: 20/04/2022
-    Public Release: 22/04/2022
-    Last Edit: 22/04/2022
+    Public Release: 26/04/2023
+    Last Edit: 26/04/2023
 
     This is the main form. It handles all the work.
 
@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,14 +28,14 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton;
 using ComponentFactory.Krypton.Toolkit;
 using MarkdownSharp;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace Sticky_Notes
 {
     public partial class frmMain : KryptonForm
     {
         // This is the primary colour palette to be used for the interface
-        public Color[] palette =
+        public Color[] _palette =
         {
             Color.FromArgb(225, 44, 55, 64),     // Primary Colour
             Color.FromArgb(255, 40, 89, 75),     // Secondary 01 Colour
@@ -47,6 +48,27 @@ namespace Sticky_Notes
             Color.FromArgb(255, 170, 185, 170),  // Secondary 02 Light
 
             Color.FromArgb(255, 152, 102, 100),  // Complementary Light
+        };
+
+        // This is the primary colour palette to be used for the interface
+        public Color[] palette =
+        {
+            Color.FromArgb(225, 242, 191, 39),     // Primary Colour
+            Color.FromArgb(255, 242, 157, 53),    // Secondary 02 Colour
+            Color.FromArgb(255, 242, 177, 56),     // Secondary 01 Colour
+            Color.FromArgb(255, 64, 37, 27),  // Complementary Colour
+            Color.FromArgb(255, 217, 145, 119),  // Neutral Colour
+
+            Color.FromArgb(255, 242, 177, 56),    // Secondary 01 Light
+            Color.FromArgb(255, 200, 200, 200),  // Grey
+            Color.FromArgb(255, 170, 185, 170),  // Secondary 02 Light
+
+            Color.FromArgb(255, 242, 157, 53),  // Complementary Light
+
+            Color.FromArgb(255, 242, 182, 160),  // Red Colour
+            Color.FromArgb(255, 152, 102, 100),  // Red Light
+
+            Color.FromArgb(255, 240, 240, 240) //White
         };
 
         // Colour palettes for note backgrounds
@@ -83,6 +105,12 @@ namespace Sticky_Notes
         // The controls form that shows controls for selected text
         frmControls controls = null;
 
+        // About details
+        public Dictionary<string, string> about;
+
+        // Image assets
+        Image[] assets = new Image[2];
+
         public frmMain()
         {
             InitializeComponent();
@@ -99,6 +127,8 @@ namespace Sticky_Notes
             loadNotes(); // Loads the note metadata
 
             controls = new frmControls(this); // Initialize the form control
+
+            loadAbout();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -199,6 +229,12 @@ namespace Sticky_Notes
             }
         }
 
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            frmAbout aboutForm = new frmAbout(this);
+            aboutForm.ShowDialog();
+        }
+
         // ////////////////////////////////////////////////////////
         // Functions
 
@@ -245,11 +281,14 @@ namespace Sticky_Notes
 
                 // Extracting metadata
                 string jsonData = reader.ReadLine();
-                List<string> metadata = JsonConvert.DeserializeObject<List<string>>(jsonData);
+                List<string> metadata = JsonSerializer.Deserialize<List<string>>(jsonData);
                 Color noteColor = Color.FromArgb(int.Parse(metadata[0]), int.Parse(metadata[1]), int.Parse(metadata[2]), int.Parse(metadata[3]));
 
                 // Reading title
                 string title = reader.ReadLine();
+
+                if (title.Length > 50)
+                    title = title.Substring(0, 50) + "...";
 
                 // Applying metadata
                 noteMetadata.Add(new Tuple<DateTime, string, Color>(
@@ -366,7 +405,8 @@ namespace Sticky_Notes
             spcNote.Panel2Collapsed = false;
             spcNote.Panel1Collapsed = true;
             btnStick.Enabled = btnEdit.Enabled = btnDelete.Enabled = true;
-            btnEdit.Text = "E";
+            btnEdit.StateCommon.Back.Image = Image.FromFile("assets/edit.png");
+            btnEdit.StateCommon.Back.Image = assets[0];
         }
 
         /// <summary>
@@ -380,7 +420,7 @@ namespace Sticky_Notes
 
             spcNote.Panel2Collapsed = true;
             spcNote.Panel1Collapsed = false;
-            btnEdit.Text = "S";
+            btnEdit.StateCommon.Back.Image = assets[1];
         }
 
         /// <summary>
@@ -400,7 +440,7 @@ namespace Sticky_Notes
             jsonData.Add(noteColour.G.ToString());
             jsonData.Add(noteColour.B.ToString());
 
-            string json = JsonConvert.SerializeObject(jsonData);
+            string json = JsonSerializer.Serialize(jsonData);
 
             // Write metadata and note to file
             System.IO.StreamWriter writer = new System.IO.StreamWriter(defaultLocation + noteMetadata[lsbMain.SelectedIndex].Item1.ToString().Replace("/", "-").Replace(":", "+") + ".txt", false);
@@ -454,7 +494,7 @@ namespace Sticky_Notes
         private int stickNote()
         {
             // Create a note form and pin it to the screen
-            frmNote myNote = new frmNote(this, webNote.DocumentText, noteMetadata[lsbMain.SelectedIndex].Item3);
+            frmNote myNote = new frmNote(this, grpMain.Text, webNote.DocumentText, noteMetadata[lsbMain.SelectedIndex].Item3);
             myNote.Show();
 
             return 0;
@@ -506,26 +546,27 @@ namespace Sticky_Notes
         private int loadColours()
         {
             // Button palette
-            kplButton.ButtonStyles.ButtonCommon.StateNormal.Back.Color1 = palette[2];
+            kplButton.ButtonStyles.ButtonCommon.StateNormal.Back.Color1 = palette[1];
             kplButton.ButtonStyles.ButtonCommon.StateCommon.Border.Color1 = palette[1];
             kplButton.ButtonStyles.ButtonCommon.StateTracking.Back.Color1 = palette[5];
             kplButton.ButtonStyles.ButtonCommon.StatePressed.Back.Color1 = palette[2];
             kplButton.ButtonStyles.ButtonCommon.StateCommon.Content.ShortText.Color1 = palette[4];
 
             // Overrides for special delete button
-            btnDelete.StateCommon.Back.Color1 = palette[3];
-            btnDelete.StateCommon.Border.Color1 = palette[8];
+            btnDelete.StateCommon.Back.Color1 = palette[9];
+            btnDelete.StateCommon.Border.Color1 = palette[10];
 
             // Listbox overrides
             lsbMain.StateCheckedNormal.Item.Back.Color1 = lsbMain.StateCheckedPressed.Item.Back.Color1 = palette[2];
             lsbMain.StateTracking.Item.Back.Color1 = lsbMain.StateCheckedTracking.Item.Back.Color1 = palette[5];
 
             // General list
-            kplList.Common.StateCommon.Back.Color1 = kplGroup.ControlStyles.ControlGroupBox.StateCommon.Back.Color1 = palette[4];
+            kplList.Common.StateCommon.Back.Color1 = kplGroup.ControlStyles.ControlGroupBox.StateCommon.Back.Color1 = palette[11];
 
             // Common group
-            kplGroup.ControlStyles.ControlGroupBox.StateCommon.Border.Color1 = palette[2];
-            kplGroup.LabelStyles.LabelCommon.StateCommon.ShortText.Color1 = palette[2];
+            
+            kplGroup.ControlStyles.ControlGroupBox.StateCommon.Border.Color1 = palette[3];
+            kplGroup.LabelStyles.LabelCommon.StateCommon.ShortText.Color1 = palette[3];
 
             // Common form
             kplForm.FormStyles.FormCommon.StateCommon.Back.Color1 = kplForm.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = palette[6];
@@ -542,7 +583,13 @@ namespace Sticky_Notes
         private int loadAssets()
         {
             this.Text = "Stick Up - Notes";
-            this.Icon = new Icon(Environment.CurrentDirectory + "/assets/icon.ico");
+            this.Icon = new Icon("icon.ico");
+            btnNew.StateCommon.Back.Image = Image.FromFile("assets/add.png");
+            btnInfo.StateCommon.Back.Image = Image.FromFile("assets/settings.png");
+            btnStick.StateCommon.Back.Image = Image.FromFile("assets/unpin.png");
+            btnDelete.StateCommon.Back.Image = Image.FromFile("assets/bin.png");
+            assets[0] = Image.FromFile("assets/edit.png");
+            assets[1] = Image.FromFile("assets/save.png");
 
             return 0;
         }
@@ -556,6 +603,18 @@ namespace Sticky_Notes
         private static String HexConverter(System.Drawing.Color c)
         {
             return "#" + c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
+        }
+
+        /// <summary>
+        /// Loads the about info
+        /// </summary>
+
+        private void loadAbout()
+        {
+            StreamReader reader = new StreamReader("about");
+            about = JsonSerializer.Deserialize<Dictionary<string, string>>(reader.ReadToEnd());
+
+            this.Text = about["title"];
         }
     }
 }
